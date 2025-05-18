@@ -1,0 +1,46 @@
+{
+    "name": "Tomcat Docker Development",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "version": "latest",
+            "enableNonRootDocker": "true",
+            "moby": "true"
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "redhat.vscode-xml",
+                "ms-azuretools.vscode-docker",
+                "redhat.vscode-yaml",
+                "vmware.vscode-boot-dev-pack",
+                "vscjava.vscode-maven",
+                "vscjava.vscode-java-debug",
+                "vscjava.vscode-java-test",
+                "vscjava.vscode-java-dependency",
+                "vscjava.vscode-tomcat"
+            ],
+            "settings": {
+                "java.jdt.ls.java.home": "",
+                "xml.format.preserveEmptyContent": true,
+                "xml.format.splitAttributes": true,
+                "files.exclude": {
+                    "**/.classpath": true,
+                    "**/.project": true,
+                    "**/.settings": true,
+                    "**/target": false
+                },
+                "java.configuration.updateBuildConfiguration": "automatic",
+                "editor.formatOnSave": true,
+                "java.format.enabled": true,
+                "maven.executable.path": "mvn",
+                "docker.showStartPage": false
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "postCreateCommand": "echo 'Development container is ready. Use Docker commands to build and run the Tomcat container.'"
+}
